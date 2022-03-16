@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ExpensesApp.ViewModels"
+             xmlns:behaviors="clr-namespace:ExpensesApp.Behaviors"
+             x:Class="ExpensesApp.Views.ExpensesPage">
+
+     <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:ExpensesVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="add.png"
+                     Command="{Binding Source={StaticResource vm}, Path=AddExpenseCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Source={StaticResource vm}, Path=Expenses}">
+            <ListView.Behaviors>
+                <behaviors:ListViewBehavior/>
+            </ListView.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"
+                              StyleId="checkmark"
+                              Detail="{Binding Category}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
