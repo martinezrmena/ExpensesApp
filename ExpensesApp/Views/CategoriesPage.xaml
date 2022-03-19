@@ -20,8 +20,51 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Categories"
-                   StyleClass="titleLabel"/>
+            <Label x:Name="titleLabel"
+                   Text="Categories"
+                   StyleClass="titleLabel">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup Name="OrientationStates">
+                        <VisualState Name="Landscape">
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible" Value="false"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        
+                        <VisualState Name="Portrait">
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible" Value="true"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Label>
+             <Button x:Name="exampleButton"
+                    Pressed="Handle_Pressed"
+                    Released="Handle_Released"
+                    Text="Button">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup Name="CommonStates">
+                        <VisualState Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Blue"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        
+                        <VisualState Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Transparent"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        
+                        <VisualState Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Green"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
             <ListView ItemsSource="{Binding Source={StaticResource vm}, Path=CategoryExpensesCollection}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
