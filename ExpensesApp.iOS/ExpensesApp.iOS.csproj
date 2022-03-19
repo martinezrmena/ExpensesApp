@@ -153,6 +153,7 @@
     <BundleResource Include="Resources\category%403x.png" />
     <BundleResource Include="Resources\expenses%402x.png" />
     <BundleResource Include="Resources\expenses%403x.png" />
+    <BundleResource Include="Resources\profits.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomRender\" />

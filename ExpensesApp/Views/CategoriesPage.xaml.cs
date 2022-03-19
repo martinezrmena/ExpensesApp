@@ -32,12 +32,17 @@ namespace ExpensesApp.Views
 
         void Handle_Pressed(object sender, System.EventArgs e)
         {
-            VisualStateManager.GoToState(exampleButton, "Focused");
+            //VisualStateManager.GoToState(exampleButton, "Focused");
         }
 
         void Handle_Released(object sender, System.EventArgs e)
         {
-            VisualStateManager.GoToState(exampleButton, "Normal");
+            //VisualStateManager.GoToState(exampleButton, "Normal");
+        }
+
+        void ImageButton_Pressed(object sender, EventArgs e)
+        {
+
         }
     }
 }
