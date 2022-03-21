@@ -23,7 +23,7 @@ namespace ExpensesApp
             #if DEBUG
                 //This line should not be on app release because user needs to take this
                 //config from global settings
-                AppResources.Culture = new System.Globalization.CultureInfo("en-US");
+                AppResources.Culture = new System.Globalization.CultureInfo("es");
             #endif
 
             DatabasePath = databasePath;

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:ExpensesApp.ViewModels"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:te="clr-namespace:ExpensesApp.Views"
              ios:Page.UseSafeArea="true"
              x:Class="ExpensesApp.Views.CategoriesPage">
 
@@ -21,7 +22,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name="titleLabel"
-                   Text="Categories"
+                   Text="{te:TranslateExtension Text=title}"
                    StyleClass="titleLabel">
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup Name="OrientationStates">
@@ -39,10 +40,10 @@
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
             </Label>
-             <!--<Button x:Name="exampleButton"
-                    Pressed="Handle_Pressed"
-                    Released="Handle_Released"
-                    Text="Button">
+             <Button x:Name="exampleButton"
+                     Pressed="Handle_Pressed"
+                     Released="Handle_Released"
+                     Text="{te:TranslateExtension Text=buttonLabel}">
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup Name="CommonStates">
                         <VisualState Name="Normal">
@@ -64,7 +65,7 @@
                         </VisualState>
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
-            </Button>-->
+            </Button>
             <ImageButton Source="profits.png"
                          Clicked="ImageButton_Pressed"
                          HeightRequest="200"
