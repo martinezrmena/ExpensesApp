@@ -25,6 +25,7 @@
     <None Remove="PCLStorage" />
     <None Remove="Behaviors\" />
     <None Remove="Effects\" />
+    <None Remove="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -33,5 +34,17 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Behaviors\" />
     <Folder Include="Effects\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\AppResources.Designer.cs">
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
